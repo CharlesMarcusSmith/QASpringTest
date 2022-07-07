@@ -12,12 +12,11 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.qa.qaspringtest.entities.Customer;
+import com.qa.qaspringtest.services.CustomerService;
 
-import services.CustomerService;
-
-// Handle ioncomming HTTP requersts and send responses
+// Handle incoming HTTP requests and send responses
 //Uses JSON data
-@RestController
+@RestController					//Make an object (bean) of this class, of type rest controller
 @RequestMapping("/customer")	//Adds a prefix to request URLs, which adds a /customer before mapping
 public class CustomerController {
 
@@ -25,7 +24,9 @@ public class CustomerController {
 	
 	// We then tell it it is a dependency using constructor:
 	//	This injects a bean into here
-	public CustomerController(CustomerService service) {
+	public CustomerController(com.qa.qaspringtest.services.CustomerService service) {
+		
+		super();	
 		this.service = service;										//This controller must be created with a service, which Spring will do.
 	}
 	
