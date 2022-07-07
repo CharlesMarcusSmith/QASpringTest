@@ -38,7 +38,7 @@ public class CustomerController {
 	
 	//GET - Read By ID:
 	@GetMapping(".readById/{id}")									//here we can see how to the handler is picking up id
-	public Customer readByID(@PathVariable int id) {				//PathVariable is used to get the ID from the path variable.
+	public Customer readByID(@PathVariable long id) {				//PathVariable is used to get the ID from the path variable.
 		return this.service.readByID(id);
 	}
 	
@@ -50,13 +50,13 @@ public class CustomerController {
 	
 	//PUT - UPDATE
 	@PutMapping("/update/{id}")
-	public Customer update(@PathVariable int id, @RequestBody Customer customer) {
+	public Customer update(@PathVariable long id, @RequestBody Customer customer) {
 		return this.service.update(id, customer);
 	}
 	
 	//POST - DELETE
 	@DeleteMapping("/delete/id")
-	public Customer delete(@PathVariable int id) {
+	public boolean delete(@PathVariable long id) {
 		return this.service.delete(id);
 	}
 	
