@@ -37,9 +37,15 @@ public class CustomerController {
 	}
 	
 	//GET - Read By ID:
-	@GetMapping(".readById/{id}")									//here we can see how to the handler is picking up id
+	@GetMapping("/readById/{id}")									//here we can see how to the handler is picking up id
 	public Customer readByID(@PathVariable long id) {				//PathVariable is used to get the ID from the path variable.
 		return this.service.readByID(id);
+	}
+	
+	//GET ) Read By First Name
+	@GetMapping("/readByFirstName/{firstName}")
+	public List<Customer> readByFirstName(@PathVariable String firstName) {
+		return this.service.readByFirstName(firstName);
 	}
 	
 	//POST - CREATE

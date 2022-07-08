@@ -1,0 +1,2 @@
+INSERT INTO `customer` (`first_name`, `last_name`, `email`) VALUES ('Anoush', 'Test', 'testemail@test.com');
+INSERT INTO `customer` (`first_name`, `last_name`, `email`) VALUES ('Charles', 'Smith', 'charles@test.com');

@@ -95,7 +95,4 @@ public class Customer {
 		return Objects.equals(email, other.email) && Objects.equals(firstName, other.firstName) && id == other.id
 				&& Objects.equals(lastName, other.lastName);
 	}
-	
-	
-	
 }

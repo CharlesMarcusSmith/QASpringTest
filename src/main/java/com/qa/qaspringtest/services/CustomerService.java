@@ -40,6 +40,11 @@ public class CustomerService {
 			return this.repo.findById(id).get();						
 		}
 		
+		//ReadByFirstName:
+		public List<Customer> readByFirstName(String firstName) {
+			return this.repo.findCustomerByFirstName(firstName);
+		}
+		
 		//POST - CREATE			// localhost:8080/customer/create
 		public Customer create(Customer customer) {
 //			this.customers.add(customer);								//Adds customer object to customers array list made above.
